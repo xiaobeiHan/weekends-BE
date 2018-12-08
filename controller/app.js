@@ -18,8 +18,8 @@ app.get('/api/createTable', (req, res) => {
 		})
 	})
 });
-app.get('/api/createTable', (req, res) => {
-	const sqlStr = sqlSet.createTable;
+app.get('/api/insertPlace', (req, res) => {
+	const sqlStr = sqlSet.insertPlace;
 	mysqlCnn.query(sqlStr, (err, results) => {
 		if (err) return res.json({
 			err_code: 1,
