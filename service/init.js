@@ -8,6 +8,7 @@ const getMysqlCnn = function () {
         multipleStatements: true //允许执行多条语句
     });
     console.log('---mysql connected---')
+    conn.connect();
     return conn
 }
 const getExpress = function () {
