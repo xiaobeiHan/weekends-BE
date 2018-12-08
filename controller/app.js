@@ -18,10 +18,9 @@ app.get('/api/createTable', (req, res) => {
 		})
 	})
 });
-app.get('/api/insertPlace', (req, res) => {
-	const sqlStr = sqlSet.insertPlace;
+app.get('/api/createTable', (req, res) => {
+	const sqlStr = sqlSet.createTable;
 	mysqlCnn.query(sqlStr, (err, results) => {
-        console.log(err, results, 'results')
 		if (err) return res.json({
 			err_code: 1,
 			message: '创建失败',
@@ -30,6 +29,21 @@ app.get('/api/insertPlace', (req, res) => {
 		res.json({
 			err_code: 200,
 			message: '创建成功'
+		})
+	})
+});
+app.get('/api/dropTable', (req, res) => {
+	const sqlStr = sqlSet.dropTable;
+	mysqlCnn.query(sqlStr, (err, results) => {
+        console.log(err, results, 'results')
+		if (err) return res.json({
+			err_code: 1,
+			message: '删除失败',
+			affextedRows: 0
+		})
+		res.json({
+			err_code: 200,
+			message: '删除成功'
 		})
 	})
 });
