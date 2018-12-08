@@ -25,7 +25,8 @@ app.get('/api/insertPlace', (req, res) => {
 		if (err) return res.json({
 			err_code: 1,
 			message: '创建失败',
-			affextedRows: 0
+            affextedRows: 0,
+            errMsg: err
 		})
 		res.json({
 			err_code: 200,
